@@ -20,6 +20,33 @@ body {
 img {
   height: 100%;
   width: auto;
-  padding: 20px;
-  margin: 10px;
+  /* padding: 20px;
+  margin: 10px; */
+}
+
+img:hover {
+  cursor: pointer;
+  animation-name: hoverImg;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes hoverImg {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
