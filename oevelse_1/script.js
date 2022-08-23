@@ -1,6 +1,6 @@
-const botle = document.querySelectorAll(".flaske");
+const bottle = document.querySelectorAll(".flaske");
 
-botle.forEach((bot) => {
+bottle.forEach((bot) => {
   bot.addEventListener("click", alkoholTjek);
 
   function alkoholTjek() {
