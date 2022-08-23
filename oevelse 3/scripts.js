@@ -1,20 +1,20 @@
 let randTal = Math.round(Math.random() * 10);
-
+let forsoeg = 0;
+const but = document.querySelector("#tjek");
 console.log(randTal);
 
-const but = document.querySelector("#tjek");
-
 but.addEventListener("click", samTal);
-
 function samTal() {
+  forsoeg++;
   let gaet = document.querySelector("#tal").value;
-  console.log(gaet);
-  but.removeEventListener("click", samTal);
 
-  if (gaet == randTal) {
-    alert(`Du gættede rigtigt! Tallet var ${randTal}`);
+  console.log(gaet);
+
+  if (gaet > randTal) {
+    alert(`Du gættede forkert! Dit gæt ${gaet}, var for højt. Prøv igen.`);
+  } else if (gaet < randTal) {
+    alert(`Du gættede forkert! Dit gæt ${gaet}, var for lavt. Prøv igen.`);
   } else {
-    alert("Du gættede forkert. Prøv igen");
-    but.addEventListener("click", samTal);
+    alert(`Du gættede rigtigt! Godt ramt med ${gaet}. Du brugte ${forsoeg} forsøg.`);
   }
 }
