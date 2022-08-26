@@ -21,10 +21,11 @@ function vis(personer) {
 
   personer.forEach((person) => {
     const klon = template.cloneNode(true).content;
-    klon.querySelector("img").src = person.billede;
-    klon.querySelector("img").alt = person.fornavn;
+    klon.querySelector("img").src = `faces/${person.billede}`;
+    klon.querySelector("img").alt = `faces/${person.fornavn}`;
     klon.querySelector("h2").textContent = `${person.efternavn}, ${person.fornavn}`;
-    klon.querySelector("p").textContent = person.email;
+    klon.querySelector(".titel").textContent = `Titel: ${person.titel}`;
+    klon.querySelector(".email").textContent = `Email: ${person.email}`;
     main.appendChild(klon);
   });
 }
