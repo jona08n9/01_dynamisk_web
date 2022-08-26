@@ -1,0 +1,10 @@
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# Example .gitignore files: https://github.com/github/gitignore
+/bower_components/
+/node_modules/
+/IMG_7166.jpeg
+/06b-skiftAlleBilleder.html
+/06B-skiftBillede.html
+/dom opg 1.html
+/opg3.html
