@@ -1,27 +1,49 @@
+//Load data
 const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
 const options = {
   headers: {
     "x-apikey": "600fe9211346a1524ff12e31",
   },
 };
-let filter = "ja";
 
+//Run things on load
+document.addEventListener("DOMContentLoaded", run);
+
+let filter = "alle";
+
+function run() {
+  const filterKnap = document.querySelectorAll("nav button");
+  filterKnap.forEach((knap) => knap.addEventListener("click", filtrerPersoner));
+  hentData();
+}
+
+//Henter Data ned fra JSON
 async function hentData() {
   const resspons = await fetch(url, options);
   const personer = await resspons.json();
+  console.log("Personer", personer);
   vis(personer);
 }
 
-hentData();
-
-const main = document.querySelector("#holder");
-const template = document.querySelector("template");
+//Event listener på knap, som skifter filteret.
+function filtrerPersoner() {
+  filter = this.dataset.troende;
+  vis(personer);
+}
 
 function vis(personer) {
+  const main = document.querySelector("#holder");
+  const template = document.querySelector("template");
+
+  //Sletter indholdet af personer
+  main.textContent = "";
   console.log(personer);
 
+  //Kører liste for alle articler
   personer.forEach((person) => {
-    if (filter == person.troende) {
+    console.log("Troende", person.troende);
+    //Se hvulken tro folkene har
+    if (filter == person.troende || filter == "alle") {
       const klon = template.cloneNode(true).content;
       klon.querySelector("img").src = `faces/${person.billede}`;
       klon.querySelector("img").alt = `faces/${person.fornavn}`;

@@ -9,17 +9,16 @@
   </head>
   <body>
     <h1>Persongalleri</h1>
-    <div class="filter">
-      <button class="all">Alle</button>
-      <button class="troende">Troende</button>
-      <button class="ikke_troende">Ikke Troende</button>
-      <button class="tvivler">Tvivler</button>
-    </div>
+    <nav class="filter">
+      <button data-troende="alle" class="active">Alle</button>
+      <button data-troende="ja">Troende</button>
+      <button cdata-troende="nej">Ikke Troende</button>
+      <button data-troende="tvivler">Tvivler</button>
+    </nav>
     <main id="holder"></main>
-
-    <template>
+    <template id="liste">
       <article>
-        <img class="billede tooltip" src="" alt="" />
+        <img class="billede" src="" alt="" />
         <h2 class="navn"></h2>
         <p class="titel"></p>
         <p class="email"></p>
