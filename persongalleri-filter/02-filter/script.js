@@ -6,21 +6,16 @@ const options = {
   },
 };
 
-//Run things on load
-document.addEventListener("DOMContentLoaded", run);
-
+let personer;
 let filter = "alle";
 
-function run() {
-  const filterKnap = document.querySelectorAll("nav button");
-  filterKnap.forEach((knap) => knap.addEventListener("click", filtrerPersoner));
-  hentData();
-}
+const filterKnap = document.querySelectorAll("nav button");
+filterKnap.forEach((knap) => knap.addEventListener("click", filtrerPersoner));
 
 //Henter Data ned fra JSON
 async function hentData() {
   const resspons = await fetch(url, options);
-  const personer = await resspons.json();
+  let personer = await resspons.json();
   console.log("Personer", personer);
   vis(personer);
 }
@@ -28,6 +23,7 @@ async function hentData() {
 //Event listener på knap, som skifter filteret.
 function filtrerPersoner() {
   filter = this.dataset.troende;
+  hentData();
   vis(personer);
 }
 
@@ -37,7 +33,6 @@ function vis(personer) {
 
   //Sletter indholdet af personer
   main.textContent = "";
-  console.log(personer);
 
   //Kører liste for alle articler
   personer.forEach((person) => {
@@ -54,6 +49,8 @@ function vis(personer) {
     }
   });
 }
+
+hentData();
 
 // Objecter i Array
 // _id: "60116c1eef2e8a1b00036d3a"
