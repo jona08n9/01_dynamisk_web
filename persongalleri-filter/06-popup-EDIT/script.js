@@ -42,7 +42,7 @@ function vis(personer) {
   //Kører liste for alle articler
   personer.forEach((person) => {
     // console.log("Troende", person.troende);
-    //Se hvulken tro folkene har
+    //Se hvilken tro folkene har
     if (filter == person.troende || filter == "alle") {
       const klon = template.cloneNode(true).content;
       klon.querySelector("img").src = `faces/${person.billede}`;
@@ -50,21 +50,12 @@ function vis(personer) {
       klon.querySelector("h2").textContent = `${person.efternavn}, ${person.fornavn}`;
       klon.querySelector(".titel").textContent = `Titel: ${person.titel}`;
       klon.querySelector(".email").textContent = `Email: ${person.email}`;
+      klon.querySelector(".id_card").addEventListener("click", () => visDetaljer(person));
 
       main.appendChild(klon);
     }
   });
   console.log("ok");
-  createDetails();
-}
-
-function createDetails() {
-  console.log("Click");
-  const showDetails = document.querySelectorAll(".id_card");
-
-  showDetails.forEach((idCard) => {
-    idCard.addEventListener("click", openDetails);
-  });
 }
 
 const detailWindow = document.querySelector("#popup");
@@ -72,7 +63,8 @@ const xDetails = document.querySelector("#close");
 
 xDetails.addEventListener("click", closeDetails);
 
-function openDetails() {
+function visDetaljer(person) {
+  console.log(person);
   detailWindow.classList.toggle("hide");
 }
 
