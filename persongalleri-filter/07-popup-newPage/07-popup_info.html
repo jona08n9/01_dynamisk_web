@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persongalleri</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Persongalleri - Alle</h1>
+    <nav class="filter">
+      <button data-troende="alle" class="valgt" autofocus>Alle</button>
+      <button data-troende="ja">Troende</button>
+      <button data-troende="nej">Ikke troende</button>
+      <button data-troende="tvivler">Tvivler</button>
+    </nav>
+    <main id="holder"></main>
+    <section id="popup" class="hide">
+      <div id="close">&#x2715</div>
+      <article>
+        <h2>Navn: <span class="id_name"></span></h2>
+        <img class="id_img" src="" alt="">
+        <h3>Titel: <span class="id_title"></span></h3>
+        <p><b>Email:</b> <span class="id_email"></span></p>
+        <p><b>Fødelsdag:</b> <span class="id_birth"></span></p>
+        <p><b>Hobbyer:</b> <span class="id_hobby"></span></p>
+        <p><b>Tro:</b> <span class="id_faith"></span></p>
+      </article>
+    </section>
+    <template>
+      <article class="id_card">
+        <img class="billede" src="" alt="" />
+        <h2 class="navn"></h2>
+        <p class="titel"></p>
+        <p class="email"></p>
+      </article>
+    </template>
+    <script src="script.js"></script>
+  </body>
+</html>
