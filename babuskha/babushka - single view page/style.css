@@ -193,4 +193,8 @@ footer p {
   header button {
     font-size: 0.75rem;
   }
+
+  footer p {
+    font-size: 1.25rem;
+  }
 }
