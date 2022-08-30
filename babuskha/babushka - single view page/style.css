@@ -93,7 +93,7 @@ header nav {
   width: 80vw;
   display: flex;
   flex-direction: column;
-  margin: 5rem auto;
+  margin: 8rem auto;
   border-radius: 25px;
   padding: 20px;
   background-color: #fff;
@@ -167,4 +167,30 @@ footer p {
   font-size: 1.675rem;
   color: #fff;
   letter-spacing: 3px;
+}
+
+@media screen and (max-width: 800px) {
+  #main {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  #dish {
+    max-width: 210px;
+  }
+
+  #image,
+  #pop_image {
+    width: 200px;
+  }
+
+  #dish p,
+  #dish h3 {
+    max-width: 200px;
+    margin-top: 10px;
+  }
+
+  header button {
+    font-size: 0.75rem;
+  }
 }
