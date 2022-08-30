@@ -17,7 +17,7 @@ const mainHeader = document.querySelector("h1");
 
 //Define a const for all buttons to filter with, and add eventListener
 const filterBut = document.querySelectorAll("nav button");
-// filterBut.forEach((but) => but.addEventListener("click", filterDishes));
+filterBut.forEach((but) => but.addEventListener("click", filterDishes));
 
 //Collect data from REST DB
 async function colData() {
@@ -38,22 +38,56 @@ function show(dishes) {
 
   //Run list for all dishes
   dishes.forEach((dish) => {
-    // console.log("Troende", person.troende);
-    //Se hvilken tro folkene har
-    if (filter == "alle" || filter == dish.kategori) {
+    //Filter based on the filter value
+    if (filter == "all" || filter == dish.kategori) {
       const clone = template.cloneNode(true).content;
       clone.querySelector("h2").textContent = `${dish.navn}`;
-      clone.querySelector("#category").textContent = `${dish.kategori}`;
-      clone.querySelector("img").src = `medium/${dish.billedenavn}-md.jpg`;
+      clone.querySelector("img").src = `medium/${dish.billednavn}-md.jpg`;
       clone.querySelector("img").alt = `${dish.billednavn}`;
       clone.querySelector("#shortInfo").textContent = `${dish.kortbeskrivelse}`;
-      clone.querySelector("#longInfo").textContent = `${dish.langbeskrivelse}`;
       clone.querySelector("#price").textContent = `${dish.pris},-`;
-      //   clone.querySelector(".id_card").addEventListener("click", () => visDetaljer(dish));
+      clone.querySelector("#dish").addEventListener("click", () => showDetails(dish));
       main.appendChild(clone);
     }
   });
   console.log("loaded");
+}
+
+//Filter the dishes according to data from buttons
+function filterDishes() {
+  console.log("let's go");
+  mainHeader.textContent = this.textContent;
+  document.querySelector(".valgt").classList.remove("valgt");
+  this.classList.add("valgt");
+  filter = this.dataset.dish;
+  colData();
+}
+
+//Create const for the popup
+const boxPopup = document.querySelector("#popup_bg");
+const popup = document.querySelector("#popup");
+
+//Make the function that shows the detail window
+function showDetails(dish) {
+  //Toggle the class "hide" from the whole popup window
+  boxPopup.classList.toggle("hide");
+  //Insert all information from dish to the specific tags
+  document.querySelector("#pop_name").textContent = dish.navn;
+  document.querySelector("#category").textContent = dish.kategori;
+  document.querySelector("#pop_image").src = `medium/${dish.billednavn}-md.jpg`;
+  document.querySelector("#pop_image").alt = dish.billednavn;
+  document.querySelector("#pop_shortInfo").textContent = dish.kortbeskrivelse;
+  document.querySelector("#longInfo").textContent = dish.langbeskrivelse;
+  document.querySelector("#origin").textContent = dish.oprindelsesregion;
+  document.querySelector("#pop_price").textContent = `${dish.pris},-`;
+
+  // Add eventlistener for closing the popup box
+  document.querySelector("#close").addEventListener("click", closeDetails);
+}
+
+// Function for closing the pop-up
+function closeDetails() {
+  boxPopup.classList.toggle("hide");
 }
 
 colData();

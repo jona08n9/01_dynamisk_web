@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Babuskha - Din nye yndlings restaurant</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button data-dish="alle" id="all" class="valgt">Alle retter</button>
+        <button data-dish="forretter" id="starters">Forretter</button>
+        <button data-dish="hovedretter" id="main_course">Hovedretter</button>
+        <button data-dish="desserter" id="dessert">Desserter</button>
+        <button data-dish="sideorders" id="sideorder">Tilbehør</button>
+        <button data-dish="drikkevarer" id="drinks">Drikkevarer</button>
+      </nav>
+    </header>
+    <h1 class="header1">Vores Menukort</h1>
+    <h2 class="sub_header">Tryk på retterne for at læse mere</h2>
+    <main id="main"></main>
+    <template>
+      <article id="dish">
+        <h2 id="name"></h2>
+        <img id="image" class="imageMain" src="" alt="" />
+        <p>
+          <b><span id="shortInfo"></span></b>
+        </p>
+        <h3>Pris: <span id="price"></span></h3>
+      </article>
+    </template>
+    <footer><p>Restaurant Babushka - Design by MadgiveUX.dk</p></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  max-width: 65ch;
+}
+
+.hide {
+  display: none;
+}
+
+header {
+  background-image: url(medium/COLOURBOX12398331.jpg);
+  height: 300px;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150% 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header button {
+  padding: 10px;
+  background-color: #434c91;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 5px;
+}
+
+header nav {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: white;
+}
+
+.header1 {
+  margin: 20px 0 5px 20px;
+}
+
+.sub_header {
+  margin: 10px 0 5px 20px;
+}
+
+#main {
+  margin-inline: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 10px;
+  column-gap: 15px;
+  justify-content: center;
+}
+
+.imageMain {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+#main article {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 5px 0;
+  justify-content: space-between;
+}
+
+#main h3 {
+  align-self: end;
+}
+
+#popup_bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: scroll;
+}
+
+#popup {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+#popup img {
+  width: 100%;
+}
+
+#close {
+  position: fixed;
+  background-color: #434c91;
+  padding: 1em;
+  margin: 1em;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid_2_1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-block-start: 5px;
+}
+
+#pop_shortInfo,
+.container2 p {
+  margin: 15px 10px;
+}
+
+#pop_shortInfo {
+  margin-top: 0 !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container3 h3,
+#pop_price {
+  text-align: right;
+  font-size: 2.5rem;
+  margin-inline-end: 10px;
+}
+
+#main article,
+#close,
+button {
+  cursor: pointer;
+}
+
+#pop_name,
+#popup > p {
+  margin-inline-start: 2px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #434c91;
+  margin-top: 75px;
+}
+
+footer p {
+  font-size: 1.675rem;
+  color: #fff;
+  letter-spacing: 3px;
+}
