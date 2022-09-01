@@ -18,6 +18,12 @@ a {
   margin-inline: 10px;
 }
 
+#close {
+  transition: all 250ms ease-in-out;
+}
+
+#close:hover,
+header button:hover,
 a:hover,
 .valgt {
   background-color: red;
@@ -210,7 +216,8 @@ footer p {
     margin-top: 10px;
   }
 
-  header button {
+  header button,
+  #close {
     font-size: 0.75rem;
   }
 
