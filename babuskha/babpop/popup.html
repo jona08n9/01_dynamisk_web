@@ -8,6 +8,7 @@
     <title>Babuskha - Din nye yndlings restaurant</title>
   </head>
   <body>
+    <a href="../index.html">Gå helt tilbage</a>
     <header>
       <nav>
         <button data-dish="alle" id="all" class="valgt">Alle retter</button>
@@ -23,15 +24,34 @@
     <main id="main"></main>
     <template>
       <article id="dish">
-        <h2 id="name"></h2>
-        <img id="image" class="imageMain" src="" alt="" />
-        <p>
-          <b><span id="shortInfo"></span></b>
-        </p>
-        <h3>Pris: <span id="price"></span></h3>
+       <h2 id="name"></h2>
+       <img id="image" class="imageMain" src="" alt="" />
+       <p><b><span id="shortInfo"></span></b></p>
+       <h3>Pris: <span id="price"></span></h3>
       </article>
     </template>
-    <footer><p>Restaurant Babushka - Design by MadgiveUX.dk</p></footer>
+
+    <div id="popup_bg" class="hide">
+      <div id="close">&#x2715</div>
+      <articel id="popup">
+        <h2 id="pop_name"></h2>
+        <p>Kategori: <span id="category"></span></p>
+        <div class="grid_2_1">
+          <img id="pop_image" src="" alt="" />
+          <div class="container">
+            <div class="container2">
+              <h3 id="pop_shortInfo"></h3>
+              <p><b>Om retten: </b><span id="longInfo"></span></p>
+              <p><b>Oprindelsesland: </b><span id="origin"></span></p>
+            </div>
+            <div class="container3">
+              <h3>Pris: <span id="pop_price"></span></h3>
+            </div>  
+          </div>
+        </div> 
+      </article>
+    </div>
+    <footer><p> Restaurant Babushka - Design by MadgiveUX.dk</p></footer>
     <script src="script.js"></script>
   </body>
 </html>

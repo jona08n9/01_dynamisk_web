@@ -3,6 +3,26 @@
   padding: 0;
 }
 
+a {
+  position: absolute;
+  top: 1%;
+  left: 0.5%;
+  text-decoration: none;
+  padding: 5px;
+  background-color: #434c91;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+  margin-inline: 10px;
+}
+
+a:hover,
+.valgt {
+  background-color: red;
+}
+
 p {
   max-width: 65ch;
 }
@@ -49,6 +69,7 @@ header nav {
 .sub_header {
   margin: 10px 0 5px 20px;
 }
+
 #main {
   margin-inline: 10px;
   padding: 10px;
@@ -92,9 +113,9 @@ header nav {
   width: 80vw;
   display: flex;
   flex-direction: column;
-  margin: 6rem auto;
+  margin: 8rem auto;
   border-radius: 25px;
-  padding: 12px;
+  padding: 20px;
   background-color: #fff;
 }
 
@@ -104,21 +125,29 @@ header nav {
 
 #close {
   position: fixed;
+  background-color: #434c91;
   padding: 1em;
-  font-size: 1.7em;
+  margin: 1em;
+  font-size: 1.25rem;
   font-weight: bolder;
-  color: white;
+  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .grid_2_1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-block-start: 5px;
 }
 
 #pop_shortInfo,
 .container2 p {
   margin: 15px 10px;
+}
+
+#pop_shortInfo {
+  margin-top: 0 !important;
 }
 
 .container {
@@ -138,6 +167,11 @@ header nav {
 #close,
 button {
   cursor: pointer;
+}
+
+#pop_name,
+#popup > p {
+  margin-inline-start: 2px;
 }
 
 footer {
